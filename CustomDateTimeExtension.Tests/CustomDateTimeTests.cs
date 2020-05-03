@@ -4,22 +4,22 @@ using Xunit;
 namespace CustomDateTimeExtension.Tests {
     public class CustomDateTimeTests {
         [Theory]
-        [InlineData ("Friday May 1st, 2020 12:00:00 AM", 2020, 5, 1)]
-        [InlineData ("Saturday May 2nd, 2020 12:00:00 AM", 2020, 5, 2)]
-        [InlineData ("Sunday May 3rd, 2020 12:00:00 AM", 2020, 5, 3)]
-        [InlineData ("Monday May 4th, 2020 12:00:00 AM", 2020, 5, 4)]
-        [InlineData ("Sunday May 10th, 2020 12:00:00 AM", 2020, 5, 10)]
-        [InlineData ("Friday May 22nd, 2020 12:00:00 AM", 2020, 5, 22)]
-        [InlineData ("Saturday May 23rd, 2020 12:00:00 AM", 2020, 5, 23)]
-        [InlineData ("Sunday May 24th, 2020 12:00:00 AM", 2020, 5, 24)]
-        [InlineData ("Friday February 28th, 2020 12:00:00 AM", 2020, 2, 28)]
-        [InlineData ("Saturday February 29th, 2020 12:00:00 AM", 2020, 2, 29)]
-        [InlineData ("Friday January 31st, 2020 12:00:00 AM", 2020, 1, 31)]
+        [InlineData ("Friday May 1st, 2020", 2020, 5, 1)]
+        [InlineData ("Saturday May 2nd, 2020", 2020, 5, 2)]
+        [InlineData ("Sunday May 3rd, 2020", 2020, 5, 3)]
+        [InlineData ("Monday May 4th, 2020", 2020, 5, 4)]
+        [InlineData ("Sunday May 10th, 2020", 2020, 5, 10)]
+        [InlineData ("Friday May 22nd, 2020", 2020, 5, 22)]
+        [InlineData ("Saturday May 23rd, 2020", 2020, 5, 23)]
+        [InlineData ("Sunday May 24th, 2020", 2020, 5, 24)]
+        [InlineData ("Friday February 28th, 2020", 2020, 2, 28)]
+        [InlineData ("Saturday February 29th, 2020", 2020, 2, 29)]
+        [InlineData ("Friday January 31st, 2020", 2020, 1, 31)]
         public void CustomToStringWithoutTime_ReturnsCorrectString (string expected, int year, int month, int day) {
 
             DateTime input = new DateTime (year, month, day);
 
-            string actual = input.CustomToString ();
+            string actual = input.CustomToString (false);
 
             Assert.Equal (expected, actual);
         }
@@ -39,7 +39,7 @@ namespace CustomDateTimeExtension.Tests {
         public void CustomToStringWithTime_ReturnsCorrectString (string expected, int year, int month, int day, int hour, int minute, int second) {
             DateTime input = new DateTime (year, month, day, hour, minute, second);
 
-            string actual = input.CustomToString ();
+            string actual = input.CustomToString (true);
 
             Assert.Equal (expected, actual);
         }

@@ -2,7 +2,7 @@ using System;
 
 namespace CustomDateTimeExtension {
     public static class CustomDateTimeExtension {
-        public static string CustomToString (this DateTime date) {
+        public static string CustomToString (this DateTime date, bool hasTime) {
             string suffix = DayWordSuffix (date);
             int year = date.Year;
             string month = date.ToString ("MMMM");
@@ -13,7 +13,7 @@ namespace CustomDateTimeExtension {
             string second = date.ToString ("ss");
             string amPm = date.ToString ("tt");
 
-            return $"{dayofWeek} {month} {day}{suffix}, {year} {hour}:{minute}:{second} {amPm}";
+            return hasTime ? $"{dayofWeek} {month} {day}{suffix}, {year} {hour}:{minute}:{second} {amPm}" : $"{dayofWeek} {month} {day}{suffix}, {year}";
         }
 
         private static string FormatDay (string dayString) {
