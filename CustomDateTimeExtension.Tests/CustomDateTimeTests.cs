@@ -1,5 +1,4 @@
 using System;
-using CustomDateTimeExtension.Core;
 using Xunit;
 
 namespace CustomDateTimeExtension.Tests {

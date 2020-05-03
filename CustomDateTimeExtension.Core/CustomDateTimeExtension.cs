@@ -1,6 +1,6 @@
 using System;
 
-namespace CustomDateTimeExtension.Core {
+namespace CustomDateTimeExtension {
     public static class CustomDateTimeExtension {
         public static string CustomToString (this DateTime date) {
             string suffix = DayWordSuffix (date);

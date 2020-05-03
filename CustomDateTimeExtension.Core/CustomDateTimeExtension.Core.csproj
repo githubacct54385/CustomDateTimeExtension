@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   <PackageId>CustomDateTimeExtension</PackageId>
-  <Version>1.0.0</Version>
+  <Version>1.0.1</Version>
   <Title>MyCustomDateTimeExtension</Title>
   <Description>An extension method for DateTime.  Creates a string representation of the DateTime which is different than the default way that ToString() works.</Description>
   <Authors>Alexander Wolcott Barke</Authors>
